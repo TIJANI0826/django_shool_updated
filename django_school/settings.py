@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 # TINYMCE_JS_URL = 'http://debug.example.org/tiny_mce/tiny_mce_src.js'
 TINYMCE_DEFAULT_CONFIG = {
     "height": "320px",
-    "width": "960px",
+    "width": "700px",
     "menubar": "file edit view insert format tools table help",
     "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
     "fullscreen insertdatetime media table paste code help wordcount spellchecker",
@@ -63,8 +63,8 @@ TINYMCE_DEFAULT_CONFIG = {
     "custom_undo_redo_levels": 10,
     "language": "es_ES",  # To force a specific language instead of the Django current language.
 }
-TINYMCE_SPELLCHECKER = True
-TINYMCE_COMPRESSOR = True
+# TINYMCE_SPELLCHECKER = True
+# TINYMCE_COMPRESSOR = True
 # TINYMCE_EXTRA_MEDIA = {
 #     'css': {
 #         'all': [
