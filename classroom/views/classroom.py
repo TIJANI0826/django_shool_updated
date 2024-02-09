@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
+from django.contrib.auth import login, logout
 
 
 class SignUpView(TemplateView):
@@ -14,4 +15,8 @@ def home(request):
             return redirect('students:quiz_list')
         else:
             return redirect('admin:index')
+    return render(request, 'classroom/home.html')
+
+def logout_view(request):
+    logout(request)
     return render(request, 'classroom/home.html')

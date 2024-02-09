@@ -20,11 +20,10 @@ class TeacherSignUpForm(UserCreationForm):
 
 
 class StudentSignUpForm(UserCreationForm):
-    interests = forms.ModelMultipleChoiceField(
-        queryset=Subject.objects.all(),
-        widget=forms.CheckboxSelectMultiple,
-        required=True
-    )
+    # interests = forms.ModelMultipleChoiceField(
+    #     queryset=Subject.objects.all(),
+    #     widget=forms.CheckboxSelectMultiple
+    # )
 
     class Meta(UserCreationForm.Meta):
         model = User
@@ -35,17 +34,17 @@ class StudentSignUpForm(UserCreationForm):
         user.is_student = True
         user.save()
         student = Student.objects.create(user=user)
-        student.interests.add(*self.cleaned_data.get('interests'))
+        # student.interests.add(*self.cleaned_data.get('interests'))
         return user
 
 
-class StudentInterestsForm(forms.ModelForm):
-    class Meta:
-        model = Student
-        fields = ('interests', )
-        widgets = {
-            'interests': forms.CheckboxSelectMultiple
-        }
+# class StudentInterestsForm(forms.ModelForm):
+#     class Meta:
+#         model = Student
+#         fields = ('interests', )
+#         widgets = {
+#             'interests': forms.CheckboxSelectMultiple
+#         }
 
 
 class QuestionForm(forms.ModelForm):

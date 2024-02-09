@@ -66,7 +66,7 @@ class Answer(models.Model):
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     quizzes = models.ManyToManyField(Quiz, through='TakenQuiz')
-    interests = models.ManyToManyField(Subject, related_name='interested_students')
+    # interests = models.ManyToManyField(Subject, related_name='interested_students')
     
     # User reputation score.
     score = models.IntegerField(default=0)

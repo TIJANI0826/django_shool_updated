@@ -8,8 +8,8 @@
 {% block content %}
   {% include 'classroom/students/_header.html' with active='new' %}
   <p class="text-muted">
-    Subjects:{% for subject in user.student.interests.all %} {{ subject.get_html_badge }}{% endfor %}
-    <a href="{% url 'students:student_interests' %}"><small>(update interests)</small></a>
+    Subjects:{% for subject in student_subjects %} {{ subject.get_html_badge }}{% endfor %}
+    {% comment %} <a href="{% url 'students:student_interests' %}"><small>(update interests)</small></a> {% endcomment %}
   </p>
 
   <table class="table table-bordered mb-0" id="tb_quizlist" >
